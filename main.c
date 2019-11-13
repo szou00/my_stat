@@ -23,4 +23,22 @@ int main() {
   long *time = &buf->st_atime;
   char *access = ctime(time);
   printf("Last accessed: %s\n",access);
+
+  //second part of assignment
+  //print file size in human readable form
+  char buffer[50];
+  sprintf(buffer, "File size: %d KB\n", size);
+  if (size >= 1024) {
+    size = size/ 1024;
+    sprintf(buffer, "File size: %d MB\n", size);
+  }
+  if (size >= 1024) {
+    size = size / 1024;
+    sprintf(buffer, "File size: %d GB\n", size);
+  }
+  printf("%s", buffer);
+
+  //print out permissions in ls -l form
+
+
 }
